@@ -24,29 +24,29 @@ struct DiagnosisView: View {
     @State private var navigateToResult: Bool = false
 
     private let questions: [DiagnosisQuestion] = [
-        DiagnosisQuestion(id: 1, coreType: .room, category: "물리적 영역", bridgeText: nil, text: "집 안에서도 층간소음이나 외부 소리가 들리면 예민해져서 휴식을 망치곤 한다."),
-        DiagnosisQuestion(id: 2, coreType: .room, category: "물리적 영역", bridgeText: nil, text: "실내 온도나 습도가 불쾌할 때, 이를 내 컨디션에 맞춰 즉각적이고 완벽하게 조절하는 데 어려움을 겪는다."),
-        DiagnosisQuestion(id: 3, coreType: .room, category: "물리적 영역", bridgeText: nil, text: "이 주거공간에서 평생 살 것이 아니라는 생각 때문에 인테리어 등 '가꾸는 즐거움'을 잊고 산다."),
-        DiagnosisQuestion(id: 4, coreType: .room, category: "물리적 영역", bridgeText: nil, text: "택배를 받거나 문을 열어줄 때 보안이나 치안 때문에 순간적인 긴장감을 느낀다."),
-        DiagnosisQuestion(id: 5, coreType: .room, category: "물리적 영역", bridgeText: nil, text: "내가 원치 않는 시점에 타인에 의해 내 공간의 정적이나 흐름이 깨질 때가 많다."),
+        DiagnosisQuestion(id: 1, coreType: .room, category: "물리적 영역", bridgeText: nil, text: "집 안에서 층간소음이나 외부 소리 때문에 충분히 쉬지 못한 적이 있다."),
+        DiagnosisQuestion(id: 2, coreType: .room, category: "물리적 영역", bridgeText: nil, text: "집이 좁아서 생활하거나 물건을 정리하는 데 답답함을 느낀 적이 있다."),
+        DiagnosisQuestion(id: 3, coreType: .room, category: "물리적 영역", bridgeText: nil, text: "‘어차피 오래 살 집이 아니다’라는 생각 때문에 내 공간을 꾸미거나 돌보려는 의욕이 줄어든 적이 있다."),
+        DiagnosisQuestion(id: 4, coreType: .room, category: "물리적 영역", bridgeText: nil, text: "택배를 받거나 문을 열 때 보안·치안 문제로 긴장한 적이 있다."),
+        DiagnosisQuestion(id: 5, coreType: .room, category: "물리적 영역", bridgeText: nil, text: "월세·관리비 등 주거비 때문에 다른 생활비를 줄여야 한다고 느낀 적이 있다."),
 
-        DiagnosisQuestion(id: 6, coreType: .comparison, category: "심리·관계 영역", bridgeText: "좋아요. 이제 시선과 비교에 대한 질문으로 넘어갈게요.", text: "친구의 SNS 게시물을 보고 난 뒤, 내 현실이 갑자기 초라하게 느껴져 앱을 끈 적이 있다."),
-        DiagnosisQuestion(id: 7, coreType: .comparison, category: "심리·관계 영역", bridgeText: nil, text: "나보다 잘나가는 사람의 소식을 들으면 축하해주기보다 '나는 지금까지 뭐 했나' 싶다."),
-        DiagnosisQuestion(id: 8, coreType: .comparison, category: "심리·관계 영역", bridgeText: nil, text: "내 성취보다 남들이 나를 '성공한 사람'으로 봐주는지가 더 중요하다고 생각한다."),
-        DiagnosisQuestion(id: 9, coreType: .comparison, category: "심리·관계 영역", bridgeText: nil, text: "명품이나 유행하는 아이템을 사는 이유 중 하나는 무시당하고 싶지 않기 때문이다."),
-        DiagnosisQuestion(id: 10, coreType: .comparison, category: "심리·관계 영역", bridgeText: nil, text: "내가 가진 장점보다는 내가 가지지 못한 것들이 더 크게 눈에 들어온다."),
+        DiagnosisQuestion(id: 6, coreType: .comparison, category: "심리·관계 영역", bridgeText: "좋아요. 이제 시선과 비교에 대한 질문으로 넘어갈게요.", text: "SNS에서 다른 사람의 일상을 본 뒤 내 삶이 초라하게 느껴진 적이 있다."),
+        DiagnosisQuestion(id: 7, coreType: .comparison, category: "심리·관계 영역", bridgeText: nil, text: "또래의 성취나 성공 소식을 들은 뒤 ‘나는 뒤처졌다’고 느낀 적이 있다."),
+        DiagnosisQuestion(id: 8, coreType: .comparison, category: "심리·관계 영역", bridgeText: nil, text: "내가 실제로 만족하는 성취보다 남들이 나를 성공적으로 보는지가 더 신경 쓰인 적이 있다."),
+        DiagnosisQuestion(id: 9, coreType: .comparison, category: "심리·관계 영역", bridgeText: nil, text: "무시당하거나 뒤처져 보이지 않기 위해 유행하는 물건이나 브랜드를 의식한 적이 있다."),
+        DiagnosisQuestion(id: 10, coreType: .comparison, category: "심리·관계 영역", bridgeText: nil, text: "내가 가진 장점보다 부족한 점이나 가지지 못한 것이 더 크게 느껴진 적이 있다."),
 
-        DiagnosisQuestion(id: 11, coreType: .overload, category: "시스템적 영역", bridgeText: "숨 가쁘게 달려왔네요. 이번엔 디지털 과부하를 확인해볼게요.", text: "화장실에 갈 때나 밥을 먹을 때 스마트폰이 없으면 허전해서 견딜 수 없다."),
-        DiagnosisQuestion(id: 12, coreType: .overload, category: "시스템적 영역", bridgeText: nil, text: "분명히 다른 일을 하려고 폰을 들었는데, 정신 차려보니 쇼츠나 릴스를 30분 넘게 보고 있다."),
-        DiagnosisQuestion(id: 13, coreType: .overload, category: "시스템적 영역", bridgeText: nil, text: "종이책이나 긴 칼럼을 읽으려 하면 앞부분만 읽다 금방 집중력이 흐트러진다."),
-        DiagnosisQuestion(id: 14, coreType: .overload, category: "시스템적 영역", bridgeText: nil, text: "스마트폰 배터리가 10% 미만으로 떨어지면 비정상적으로 불안함을 느낀다."),
-        DiagnosisQuestion(id: 15, coreType: .overload, category: "시스템적 영역", bridgeText: nil, text: "자기 전 스마트폰을 보느라 실제 계획했던 취침 시간보다 1시간 이상 늦게 잔다."),
+        DiagnosisQuestion(id: 11, coreType: .overload, category: "시스템적 영역", bridgeText: "숨 가쁘게 달려왔네요. 이번엔 디지털 과부하를 확인해볼게요.", text: "식사·화장실·이동 중에도 스마트폰이 없으면 불안하거나 허전한 적이 있다."),
+        DiagnosisQuestion(id: 12, coreType: .overload, category: "시스템적 영역", bridgeText: nil, text: "잠깐 보려고 한 숏폼 영상이나 SNS를 예상보다 훨씬 오래 본 적이 있다."),
+        DiagnosisQuestion(id: 13, coreType: .overload, category: "시스템적 영역", bridgeText: nil, text: "긴 글·책·강의 자료를 읽을 때 금방 집중이 흐트러진 적이 있다."),
+        DiagnosisQuestion(id: 14, coreType: .overload, category: "시스템적 영역", bridgeText: nil, text: "스마트폰 배터리가 부족하거나 인터넷 연결이 끊기면 불안해진 적이 있다."),
+        DiagnosisQuestion(id: 15, coreType: .overload, category: "시스템적 영역", bridgeText: nil, text: "자기 전 스마트폰 사용 때문에 계획한 시간보다 늦게 잠든 적이 있다."),
 
-        DiagnosisQuestion(id: 16, coreType: .ethos, category: "문화적 흐름", bridgeText: "이제 마지막 영역이에요. 내 선택이 정말 나의 선택인지 확인해볼게요.", text: "딱히 필요 없더라도 남들이 다 사는 '대란 아이템'은 일단 사야 마음이 놓인다."),
-        DiagnosisQuestion(id: 17, coreType: .ethos, category: "문화적 흐름", bridgeText: nil, text: "내가 진심으로 좋아하는 것보다, 대중적으로 '힙하다'고 평가받는 장소에 가는 편이다."),
-        DiagnosisQuestion(id: 18, coreType: .ethos, category: "문화적 흐름", bridgeText: nil, text: "신조어나 최신 유행하는 밈을 모르면 대화에서 소외될까 봐 억지로 찾아본다."),
-        DiagnosisQuestion(id: 19, coreType: .ethos, category: "문화적 흐름", bridgeText: nil, text: "인생의 중요한 결정을 할 때 내 행복보다 '남들 보기에 평범한지'가 더 우선이다."),
-        DiagnosisQuestion(id: 20, coreType: .ethos, category: "문화적 흐름", bridgeText: nil, text: "가끔은 내가 진짜 무엇을 좋아하는지보다 '무엇을 좋아해야 하는지'를 고민하는 것 같다.")
+        DiagnosisQuestion(id: 16, coreType: .ethos, category: "문화적 흐름", bridgeText: "이제 마지막 영역이에요. 내 선택이 정말 나의 선택인지 확인해볼게요.", text: "꼭 필요하지 않아도 남들이 많이 사는 물건은 나도 사야 할 것처럼 느낀 적이 있다."),
+        DiagnosisQuestion(id: 17, coreType: .ethos, category: "문화적 흐름", bridgeText: nil, text: "내가 진짜 좋아하는 곳보다 SNS에서 인기 있는 장소를 선택한 적이 있다."),
+        DiagnosisQuestion(id: 18, coreType: .ethos, category: "문화적 흐름", bridgeText: nil, text: "유행어·밈·트렌드를 모르면 대화에서 뒤처질까 봐 억지로 찾아본 적이 있다."),
+        DiagnosisQuestion(id: 19, coreType: .ethos, category: "문화적 흐름", bridgeText: nil, text: "중요한 결정을 생각할 때 내 행복보다 ‘남들이 보기에 괜찮은 선택인지’를 먼저 따진 적이 있다."),
+        DiagnosisQuestion(id: 20, coreType: .ethos, category: "문화적 흐름", bridgeText: nil, text: "내가 진짜 좋아하는 것보다 ‘좋아해야 할 것 같은 것’을 고르고 있다는 생각이 든 적이 있다.")
     ]
 
     private var currentQuestion: DiagnosisQuestion {
@@ -192,7 +192,7 @@ struct DiagnosisView: View {
                     .lineSpacing(6)
                     .fixedSize(horizontal: false, vertical: true)
 
-                Text("가장 가까운 정도를 선택해 주세요.")
+                Text(" ' 최근 2주동안의 경험을 바탕으로 진단해주세요! '")
                     .font(.system(size: 14, weight: .regular))
                     .foregroundColor(Re20sColor.subText)
             }
