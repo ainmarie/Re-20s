@@ -1,17 +1,21 @@
-//
-//  Re_20sApp.swift
-//  Re-20s
-//
-//  Created by 김아인 on 6/1/26.
-//
-
 import SwiftUI
 
 @main
-struct Re_20sApp: App {
+struct Re20sApp: App {
+    @StateObject private var appState = AppState()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if !appState.hasSeenOpening {
+                OpeningView()
+                    .environmentObject(appState)
+            } else if appState.isSignedUp {
+                MainTabView()
+                    .environmentObject(appState)
+            } else {
+                SignupView()
+                    .environmentObject(appState)
+            }
         }
     }
 }
